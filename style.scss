@@ -1,0 +1,178 @@
+*
+{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+
+    body
+    {
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        background: #333;
+        color: #fff;
+        line-height: 1.5;
+        position: relative;
+
+        .next
+        {
+            position: absolute;
+            top: 40%;
+            font-size: 5rem;
+            right: 0;
+            border: none;
+            background: transparent;
+            outline: none;
+
+            svg
+            {
+                width: 80px;
+                fill: #fff;
+            }
+
+            svg:hover
+            {
+                fill: #333;
+                cursor: pointer;
+            }
+        }
+
+        .prev
+        {
+            position: absolute;
+            top: 40%;
+            font-size: 5rem;
+            left: 0;
+            border: none;
+            background: transparent;
+            outline: none;
+
+            svg
+            {
+                width: 80px;
+                fill: #fff;
+            }
+
+            svg:hover
+            {
+                fill: #333;
+                cursor: pointer;
+            }
+        }
+
+        .slider
+        {
+            position: relative;
+            overflow: hidden;
+            height: 100vh;
+            width: 100vw;
+
+            .slide
+            {
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                opacity: 0;
+                transition: opacity 0.4s ease-in-out;
+
+                .content
+                {
+                    position: absolute;
+                    bottom: 6rem;
+                    opacity: 0;
+                    left: -600px;
+                    width: 600px;
+                    background: rgba(255, 255, 255, 0.8);
+                    color: #333;
+                    padding: 2rem;
+
+                    h1
+                    {
+                        margin-bottom: 1rem;
+                    }
+
+                    p
+                    {
+                        font-size: 1.1rem;
+                    }
+                }
+            }
+
+            .slide:first-child
+            {
+                background: url("../img/image_1.jpg") no-repeat center center/cover;
+            }
+            .slide:nth-child(2)
+            {
+                background: url("../img/image_2.jpg") no-repeat center center/cover;
+            }
+            .slide:nth-child(3)
+            {
+                background: url("../img/image_3.jpg") no-repeat center center/cover;
+            }
+            .slide:nth-child(4)
+            {
+                background: url("../img/image_4.jpg") no-repeat center center/cover;
+            }
+            .slide:nth-child(5)
+            {
+                background: url("../img/image_5.jpg") no-repeat center center/cover;
+            }
+            .slide:nth-child(6)
+            {
+                background: url("../img/image_6.jpg") no-repeat center center/cover;
+            }
+            .slide:nth-child(7)
+            {
+                background: url("../img/image_7.jpg") no-repeat center center/cover;
+            }
+            .slide:nth-child(8)
+            {
+                background: url("../img/image_8.jpg") no-repeat center center/cover;
+            }
+            .slide:nth-child(9)
+            {
+                background: url("../img/image_9.jpg") no-repeat center center/cover;
+            }
+            .slide:nth-child(10)
+            {
+                background: url("../img/image_10.jpg") no-repeat center center/cover;
+            }
+
+            .current
+            {
+                opacity: 1;
+
+                .content
+                {
+                    opacity: 1;
+                    transform: translateX(600px);
+                    transition: all 0.7s ease-in-out 0.3s;
+                }
+
+            
+            }
+            @media(max-width: 500px)
+            {
+                .slide
+                {
+                    .content
+                    {
+                        bottom: -280px;
+                        left: 0;
+                        width: 100%;
+                    }
+                }
+
+                .current
+                {
+                    .content
+                    {
+                        transform: translateY(-350px);
+                    }
+                }
+            }
+        }
+    }
+}
+
